@@ -20,5 +20,7 @@ jobs:
             git pull
             #npm install -f
             #pm2 restart backend
+            docker stop hadielearn:latest
+            docker rmi -f hadielearn:latest
             docker build . -t hadielearn:latest
             docker run -d -p 3000:3000 hadielearn:latest
